@@ -65,6 +65,7 @@ class StringCoin {
                         targetCoin = test.split(",");
                         n--;
                     } while (!targetCoin[2].equals(parts[2]) && n >= 1);
+                    //clean this up -- no create (or transfer) statement was found on this coin so it is not valid
                     if (!targetCoin[2].equals(parts[2])) {
                         System.out.print("Blockchain can't be read.");
                         System.exit(1);
@@ -94,6 +95,10 @@ class StringCoin {
                             System.out.print("Blockchain can't be read.");
                             System.exit(1);
                         }
+                }
+                else {
+                    System.out.print("Blockchain can't be read.");
+                    System.exit(1);                    
                 }
                 prevLine = line;
                 i++;
